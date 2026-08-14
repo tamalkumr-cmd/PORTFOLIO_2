@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
 
         <p className="text-zinc-600">
-          Built with Next.js & Tailwind CSS
+          &copy; {new Date().getFullYear()} Tamal. All rights reserved.
         </p>
       </div>
     </footer>

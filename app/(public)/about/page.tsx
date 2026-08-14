@@ -18,7 +18,7 @@ import {
 import ContactSection from '@/components/ContactSection';
 
 const techStack = {
-  Languages: ['TypeScript', 'JavaScript', 'Kotlin', 'C++', 'Python', 'SQL'],
+  Languages: ['TypeScript', 'JavaScript', 'Java', 'C++', 'Python', 'SQL'],
   Frontend: ['React', 'Next.js (App Router)', 'Tailwind CSS', 'Framer Motion', 'HTML5/CSS3'],
   Backend: ['Node.js', 'Express', 'Supabase (PostgreSQL)', 'REST APIs', 'Server Actions'],
   Infrastructure: ['Upstash Redis', 'Vercel Edge', 'Git', 'GitHub Actions', 'GCP Basics'],
@@ -27,7 +27,7 @@ const techStack = {
 
 const terminalOutputs: Record<string, string> = {
   whoami: 'Tamal Kumbhakar — Full-stack developer & CS undergrad building reactive web platforms, IoT systems, and high-performance serverless apps.',
-  skills: 'TypeScript, Next.js, Kotlin, C++, PostgreSQL, Upstash Redis, Tailwind CSS, Framer Motion.',
+  skills: 'TypeScript, Next.js, Java, C++, PostgreSQL, Upstash Redis, Tailwind CSS, Framer Motion.',
   education: 'B.Tech in Computer Science & Engineering @ VIT Chennai (2024–2028).',
   interests: 'Low-latency serverless backends, animated kinetic UIs, micro-robotics/IoT logic, and Turing machine simulations.',
   contact: 'Drop a message via the form below or reach out directly on GitHub/LinkedIn.',
