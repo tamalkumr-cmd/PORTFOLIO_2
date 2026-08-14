@@ -1,14 +1,20 @@
 // app/layout.tsx
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
 import CommandMenu from '@/components/CommandMenu';
 import '@/app/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
+// 1. Permanently lock browser theme to Dark Mode (prevents OS light-mode override)
+export const viewport: Viewport = {
+  themeColor: '#000000',
+  colorScheme: 'dark',
+};
+
+// 2. Full metadata for Google Search and Social Previews
 export const metadata: Metadata = {
   metadataBase: new URL('https://tamal.online'),
   title: {
@@ -16,6 +22,19 @@ export const metadata: Metadata = {
     template: '%s | Tamal Kumbhakar',
   },
   description: 'Full-stack developer portfolio, case studies, and real-time telemetry.',
+  openGraph: {
+    title: 'Tamal Kumbhakar — Software Engineer & Builder',
+    description: 'Full-stack developer portfolio, case studies, and real-time telemetry.',
+    url: 'https://tamal.online',
+    siteName: 'Tamal Kumbhakar',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tamal Kumbhakar — Software Engineer & Builder',
+    description: 'Full-stack developer portfolio, case studies, and real-time telemetry.',
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +52,10 @@ export default function RootLayout({
       '@type': 'EducationalOrganization',
       name: 'Vellore Institute of Technology, Chennai',
     },
-    sameAs: ['https://github.com/tamalkumr-cmd', 'https://www.linkedin.com/in/tamal-kumbhakar-87a8a7233/'],
+    sameAs: [
+      'https://github.com/tamalkumr-cmd',
+      'https://www.linkedin.com/in/tamal-kumbhakar-87a8a7233/',
+    ],
     knowsAbout: [
       'Full-Stack Development',
       'Next.js',
@@ -47,7 +69,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark scroll-smooth" style={{ colorScheme: 'dark' }}>
       <head>
         <script
           type="application/ld+json"
@@ -71,7 +93,6 @@ export default function RootLayout({
 
         {/* Global Utilities */}
         <Footer />
-      
         <CommandMenu />
       </body>
     </html>
