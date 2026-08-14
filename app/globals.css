@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   color-scheme: dark;
@@ -8,7 +10,6 @@ html,
 body {
   background-color: #000000;
   color: #f4f4f5;
-  font-family: inherit;
 }
 
 /* Subtle background grid pattern */
@@ -19,21 +20,18 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
-/* Custom Slim Dark Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: #09090b;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #27272a;
   border-radius: 9999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
 }
