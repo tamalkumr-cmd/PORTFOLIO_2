@@ -10,7 +10,7 @@ import '@/app/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://yourdomain.com'),
+  metadataBase: new URL('https://tamal.online'),
   title: {
     default: 'Tamal Kumbhakar — Software Engineer & Builder',
     template: '%s | Tamal Kumbhakar',
