@@ -29,8 +29,8 @@ const jsonLd = {
     name: 'Vellore Institute of Technology, Chennai',
   },
   sameAs: [
-    'https://github.com/yourusername', // Update with your actual handle
-    'https://linkedin.com/in/yourusername',
+    'https://github.com/tamalkumr-cmd', // Update with your actual handle
+    'https://linkedin.com/in/tamal-kumbhakar-87a8a7233',
   ],
   knowsAbout: [
     'Full-Stack Development',
