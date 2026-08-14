@@ -2,18 +2,14 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { 
   Terminal as TerminalIcon, 
-  Code2, 
-  Cpu, 
-  Layers, 
-  Globe2, 
   Sparkles, 
   Compass, 
-  Wrench,
-  Check
+  Wrench
 } from 'lucide-react';
 import ContactSection from '@/components/ContactSection';
 
@@ -58,17 +54,37 @@ export default function AboutPage() {
 
   return (
     <main className="max-w-5xl mx-auto px-6 py-12 space-y-16">
-      {/* Header */}
-      <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-          <Sparkles className="w-3.5 h-3.5" /> Philosophy & Tooling
+      {/* Header with Profile Photo */}
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-10">
+        {/* Profile Image Frame */}
+        <div className="relative group shrink-0">
+          {/* Subtle Ambient Radial Glow */}
+          <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-emerald-500/30 to-cyan-500/20 blur-xl opacity-70 group-hover:opacity-100 transition duration-500" />
+          
+          <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950/80 shadow-2xl">
+            <Image
+              src="/avatar.jpg"
+              alt="Tamal Kumbhakar"
+              fill
+              priority
+              sizes="(max-width: 640px) 144px, 176px"
+              className="object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+            />
+          </div>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-          Behind the Code
-        </h1>
-        <p className="text-zinc-400 text-sm sm:text-base max-w-2xl leading-relaxed">
-          I design and engineer end-to-end software solutions—balancing micro-interaction aesthetics with resilient serverless systems.
-        </p>
+
+        {/* Header Content */}
+        <div className="space-y-3 text-center sm:text-left flex-1">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+            <Sparkles className="w-3.5 h-3.5" /> Philosophy & Tooling
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Behind the Code
+          </h1>
+          <p className="text-zinc-400 text-sm sm:text-base max-w-2xl leading-relaxed">
+            I design and engineer end-to-end software solutions—balancing micro-interaction aesthetics with resilient serverless systems.
+          </p>
+        </div>
       </div>
 
       {/* Bento Grid: Terminal + Core Pillars */}
@@ -90,7 +106,9 @@ export default function AboutPage() {
 
             {/* Terminal Content Stream */}
             <div className="pt-4 space-y-3 text-zinc-300 max-h-[220px] overflow-y-auto pr-2">
-              <p className="text-zinc-500">Type <span className="text-emerald-400 font-bold">&apos;help&apos;</span> to see interactive commands.</p>
+              <p className="text-zinc-500">
+                Type <span className="text-emerald-400 font-bold">&apos;help&apos;</span> to see interactive commands.
+              </p>
               {terminalHistory.map((item, index) => (
                 <div key={index} className="space-y-1">
                   <div className="flex items-center gap-2 text-zinc-200">
